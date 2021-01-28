@@ -4,6 +4,7 @@ const studentSchema = new Schema({
 	studentID: {
 		type: String,
 		required: true,
+		unique: true,
 	},
 	studentName: {
 		type: String,
@@ -29,4 +30,4 @@ const studentSchema = new Schema({
 	},
 });
 
-export default model("Student", studentSchema);
+module.exports = studentModel = model("Student", studentSchema);

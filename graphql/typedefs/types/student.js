@@ -3,9 +3,9 @@ const { gql } = require("apollo-server");
 const studentType = gql`
 	type Student {
 		studentName: String!
-		studentID: String!
+		studentID: ID!
 		email: String!
-		dateoFBirth: String!
+		dateOfBirth: String!
 		residentialStatus: String!
 		hallOfResidence: String
 	}
@@ -14,7 +14,7 @@ const studentType = gql`
 		studentName: String!
 		studentID: String!
 		email: String!
-		dateoFBirth: String!
+		dateOfBirth: String!
 		residentialStatus: String!
 		hallOfResidence: String
 	}

@@ -6,6 +6,7 @@ const { graphqlUploadExpress } = require("graphql-upload");
 const { typeDefs } = require("./graphql/typedefs");
 const { resolvers } = require("./graphql/resolvers");
 const { connect } = require("mongoose");
+const models = require("./models/index");
 const app = express();
 
 const db_url =
@@ -21,6 +22,9 @@ const server = new ApolloServer({
 	resolvers,
 	typeDefs,
 	uploads: false,
+	context: {
+		models,
+	},
 });
 
 server.applyMiddleware({ app, path: "/" });
