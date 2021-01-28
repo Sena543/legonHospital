@@ -13,9 +13,15 @@ const doctorSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	timesAvailable: [
+		{
+			type: String,
+			required: true,
+		},
+	],
 	officeNumber: {
 		type: String,
 	},
 });
 
-module.exports = doctorData = model("Doctor", doctorSchema);
+module.exports = doctorModel = model("Doctor", doctorSchema);
