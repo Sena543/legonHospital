@@ -8,6 +8,7 @@ const AppointmentType = gql`
 		appointmentStartTime: String!
 		endTime: String!
 		arrivalConfirmation: Boolean
+		appointmentDate: String!
 	}
 
 	input AppointmentInput {
@@ -17,6 +18,7 @@ const AppointmentType = gql`
 		appointmentStartTime: String!
 		endTime: String!
 		arrivalConfirmation: Boolean
+		appointmentDate: String!
 	}
 `;
 

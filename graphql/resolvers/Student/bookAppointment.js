@@ -1,5 +1,13 @@
 const bookAppointment = async (_, { input }, { models }) => {
-	const { appointmentStartTime, arrivalConfirmation, checkupType, doctorID, endTime, studentID } = input;
+	const {
+		appointmentStartTime,
+		arrivalConfirmation,
+		checkupType,
+		doctorID,
+		endTime,
+		studentID,
+		appointmentDate,
+	} = input;
 	const Appointment = models.appointmentModel;
 	const Student = models.studentModel;
 	try {
@@ -11,6 +19,7 @@ const bookAppointment = async (_, { input }, { models }) => {
 			doctorID,
 			endTime,
 			studentID,
+			appointmentDate,
 		});
 		await newAppointment.save();
 		await Student.findOneAndUpdate(
@@ -26,3 +35,5 @@ const bookAppointment = async (_, { input }, { models }) => {
 };
 
 module.exports = { bookAppointment };
+// new Date(1611861544465).toLocaleString()
+//converts milliseconds to proper time and date

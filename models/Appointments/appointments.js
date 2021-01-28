@@ -27,6 +27,9 @@ const appointmentSchema = new Schema(
 			type: Boolean,
 			default: null,
 		},
+		appointmentDate: {
+			type: String,
+		},
 	},
 	{ timestamps: true }
 );
