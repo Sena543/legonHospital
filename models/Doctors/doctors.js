@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 const doctorSchema = new Schema({
 	doctorrID: {
 		type: String,
+		unique: true,
 		required: true,
 	},
 	doctorName: {

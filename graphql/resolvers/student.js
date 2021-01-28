@@ -1,4 +1,5 @@
 const { addNewStudent } = require("./Student/addNewStudent");
+const { bookAppointment } = require("./Student/bookAppointment");
 const { getAllStudents } = require("./Student/allStudents");
 const studentResolvers = {
 	Query: {
@@ -6,6 +7,7 @@ const studentResolvers = {
 	},
 	Mutation: {
 		addNewStudent,
+		bookAppointment,
 	},
 };
 

@@ -8,6 +8,7 @@ const studentType = gql`
 		dateOfBirth: String!
 		residentialStatus: String!
 		hallOfResidence: String
+		appointmentList: [Appointment]
 	}
 
 	input StudentInput {

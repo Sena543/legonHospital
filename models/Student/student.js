@@ -28,6 +28,12 @@ const studentSchema = new Schema({
 		type: String,
 		default: "Not Applicable",
 	},
+	appointmentList: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: "Appointment",
+		},
+	],
 });
 
 module.exports = studentModel = model("Student", studentSchema);

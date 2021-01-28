@@ -11,7 +11,12 @@ const app = express();
 
 const db_url =
 	"mongodb+srv://senanu:senanu@legonhospital.tjin0.mongodb.net/legonHospital?retryWrites=true&w=majority";
-connect(db_url, { useNewUrlParser: true, useUnifiedTopology: true })
+connect(db_url, {
+	useUnifiedTopology: true,
+	useNewUrlParser: true,
+	useCreateIndex: true,
+	useFindAndModify: false,
+})
 	.then(() => console.log("Database connected"))
 	.catch((error) => console.error(error));
 

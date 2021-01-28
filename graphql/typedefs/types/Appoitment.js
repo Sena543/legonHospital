@@ -19,3 +19,5 @@ const AppointmentType = gql`
 		arrivalConfirmation: Boolean
 	}
 `;
+
+module.exports = { AppointmentType };

@@ -12,7 +12,8 @@ const addNewStudent = async (_, { input }, { models }) => {
 			studentName,
 			hallOfResidence,
 			email,
-			residentialStatus,
+            residentialStatus,
+            
 		});
 		await addNewStudent.save();
 		return addNewStudent;
