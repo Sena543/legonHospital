@@ -1,4 +1,5 @@
-const { addNewDoctor } = require("./Docotrs/addNewDoctor");
+const { addNewDoctor } = require("./Doctors/addNewDoctor");
+
 const doctorResolvers = {
 	Query: {},
 	Mutation: {
