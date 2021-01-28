@@ -1,5 +1,6 @@
 const { studentResolvers } = require("./student");
-const resolvers = [studentResolvers];
+const { doctorResolvers } = require("./doctor");
+const resolvers = [studentResolvers, doctorResolvers];
 
 module.exports = {
 	resolvers,

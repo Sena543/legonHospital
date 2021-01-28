@@ -8,6 +8,7 @@ const query = gql`
 	type Mutation {
 		addNewStudent(input: StudentInput): Student
 		bookAppointment(input: AppointmentInput): Appointment
+		addNewDoctor(input: DoctorInput): Doctor
 	}
 `;
 
