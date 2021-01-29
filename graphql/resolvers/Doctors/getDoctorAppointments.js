@@ -1,7 +1,12 @@
 const getDoctorAppointments = async (_, { doctorID }, { models }) => {
-	const DoctorAppointments = models.appoointmentModel;
+	const DoctorAppointments = models.appointmentModel;
+	const Doctor = models.doctorModel;
 	try {
-		return await DoctorAppointments.find({ doctorID }).populate("studentID").populate("doctorID").exec();
+		const findDoctor = await Doctor.findOne({ doctorID });
+		return await DoctorAppointments.find({ doctorID: findDoctor._id })
+			.populate("studentID")
+			.populate("doctorID")
+			.exec();
 	} catch (error) {
 		console.error(error);
 	}

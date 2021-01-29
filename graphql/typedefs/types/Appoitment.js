@@ -2,8 +2,10 @@ const { gql } = require("apollo-server");
 
 const AppointmentType = gql`
 	type Appointment {
-		studentID: ID!
-		doctorID: ID!
+		studentID: Student!
+		# studentID: ID!
+		doctorID: Doctor!
+		# doctorID: ID!
 		checkupType: String!
 		appointmentStartTime: String!
 		endTime: String!
