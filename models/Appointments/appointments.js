@@ -1,16 +1,16 @@
-const { Schema, model, Mongoose } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const appointmentSchema = new Schema(
 	{
 		studentID: {
-			type: String,
+			type: Schema.Types.ObjectId,
 			required: true,
-			// ref: "Student",
+			ref: "Student",
 		},
 		doctorID: {
-			type: String,
+			type: Schema.Types.ObjectId,
 			required: true,
-			// ref: "Doctor",
+			ref: "Doctor",
 		},
 		checkupType: {
 			type: String,

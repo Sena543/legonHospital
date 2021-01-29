@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const doctorSchema = new Schema({
-	doctorrID: {
+	doctorID: {
 		type: String,
 		unique: true,
 		required: true,
@@ -14,12 +14,7 @@ const doctorSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	timesAvailable: [
-		{
-			type: String,
-			required: true,
-		},
-	],
+	timesAvailable: [String],
 	officeNumber: {
 		type: String,
 	},

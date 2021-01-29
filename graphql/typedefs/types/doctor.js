@@ -5,7 +5,7 @@ const DoctorType = gql`
 		doctorID: ID!
 		doctorName: String!
 		email: String!
-		timesAvaiable: [String!]!
+		timesAvailable: [String!]!
 		officeNumber: String!
 	}
 
@@ -13,7 +13,7 @@ const DoctorType = gql`
 		doctorID: ID!
 		doctorName: String!
 		email: String!
-		timesAvaiable: [String!]!
+		timesAvailable: [String!]!
 		officeNumber: String!
 	}
 `;

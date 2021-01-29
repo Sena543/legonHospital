@@ -10,15 +10,19 @@ const bookAppointment = async (_, { input }, { models }) => {
 	} = input;
 	const Appointment = models.appointmentModel;
 	const Student = models.studentModel;
+	const Doctor = models.doctorModel;
 	try {
-		const findStudent = await Student.findOne({ studentID });
+		const [findStudent, findDoctor] = await Promise.all([
+			Student.findOne({ studentID }),
+			Doctor.findOne({ doctorID }),
+		]);
 		const newAppointment = await new Appointment({
 			appointmentStartTime,
 			arrivalConfirmation,
 			checkupType,
-			doctorID,
+			doctorID: findDoctor._id,
 			endTime,
-			studentID,
+			studentID: findStudent._id,
 			appointmentDate,
 		});
 		await newAppointment.save();
