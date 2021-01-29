@@ -12,10 +12,22 @@ const bookAppointment = async (_, { input }, { models }) => {
 	const Student = models.studentModel;
 	const Doctor = models.doctorModel;
 	try {
+		// const appointmentTime = `${appointmentStartTime}-${endTime}`;
 		const [findStudent, findDoctor] = await Promise.all([
 			Student.findOne({ studentID }),
 			Doctor.findOne({ doctorID }),
 		]);
+
+		//check if doctor has an appointment at the selected time
+		const checkAppointmentExistence = await Appointment.findOne({
+			doctorID: findDoctor._id,
+			appointmentStartTime,
+			endTime,
+		});
+
+		if (checkAppointmentExistence) {
+			return new Error("Appointment time allocated to another user. Select another time or Doctor");
+		}
 		const newAppointment = await new Appointment({
 			appointmentStartTime,
 			arrivalConfirmation,
