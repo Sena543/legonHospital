@@ -9,6 +9,12 @@ const studentResolvers = {
 		students: getAllStudents,
 		getStudentProfile,
 	},
+	Student: {
+		appointmentList: async (parent, _, { models }) => {
+			console.log(parent);
+			return await models.appointmentModel.find({ studentID: parent._id }).populate("doctorID");
+		},
+	},
 	Mutation: {
 		addNewStudent,
 		bookAppointment,

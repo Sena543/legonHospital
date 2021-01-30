@@ -44,6 +44,7 @@ const bookAppointment = async (_, { input }, { models }) => {
 		);
 		// findStudent.save();
 		return newAppointment;
+		// return await Appointment.findOne({studentID:findStudent_id}).pop
 	} catch (error) {
 		console.error(error);
 	}
