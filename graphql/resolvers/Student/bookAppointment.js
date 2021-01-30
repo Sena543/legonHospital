@@ -43,8 +43,10 @@ const bookAppointment = async (_, { input }, { models }) => {
 			{ $set: { appointmentList: [...findStudent.appointmentList, newAppointment._id] } }
 		);
 		// findStudent.save();
-		return newAppointment;
-		// return await Appointment.findOne({studentID:findStudent_id}).pop
+		// return newAppointment;
+		return await Appointment.findOne({ studentID: findStudent._id })
+			.populate("doctorID")
+			.populate("studentID");
 	} catch (error) {
 		console.error(error);
 	}

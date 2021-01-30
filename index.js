@@ -7,6 +7,7 @@ const { typeDefs } = require("./graphql/typedefs");
 const { resolvers } = require("./graphql/resolvers");
 const { connect } = require("mongoose");
 const models = require("./models/index");
+
 const app = express();
 
 const db_url =
@@ -27,8 +28,16 @@ const server = new ApolloServer({
 	resolvers,
 	typeDefs,
 	uploads: false,
-	context: {
-		models,
+	// context: {
+	// models,
+	// },
+	context: async ({ req }) => {
+		// const user = checkUserAuthentication(req);
+		return {
+			models,
+			// user,
+			secret: process.env.SECRET,
+		};
 	},
 });
 

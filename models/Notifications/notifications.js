@@ -16,4 +16,4 @@ let schema = new Schema({
 	],
 });
 
-module.exports = notificationsData = model("Notifications", schema);
+module.exports = notificationsModel = model("Notifications", schema);
