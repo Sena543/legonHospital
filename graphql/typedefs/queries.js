@@ -11,6 +11,7 @@ const query = gql`
 		addNewStudent(input: StudentInput): Student
 		bookAppointment(input: AppointmentInput): Appointment
 		addNewDoctor(input: DoctorInput): Doctor
+		notifications: String!
 	}
 `;
 
