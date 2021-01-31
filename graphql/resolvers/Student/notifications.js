@@ -1,5 +1,3 @@
-const appointments = require("../../../models/Appointments/appointments");
-
 const notifications = async (_, __, { models }) => {
 	const Notifications = models.notificationsModel;
 	const Appointment = models.appointmentModel;
