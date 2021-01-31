@@ -1,6 +1,7 @@
 const addNewStudent = async (_, { input }, { models }) => {
 	const Student = models.studentModel;
-	const { studentID, studentName, hallOfResidence, email, residentialStatus, dateOfBirth } = input;
+	const Login = models.loginModel;
+	const { studentID, studentName, hallOfResidence, email, residentialStatus, dateOfBirth, password } = input;
 	try {
 		const findStudent = await Student.findOne({ studentID });
 		if (findStudent) {
@@ -15,6 +16,9 @@ const addNewStudent = async (_, { input }, { models }) => {
             residentialStatus,
             
 		});
+		const _login = new Login({ staffID, password });
+		await _login.save();
+		
 		await addNewStudent.save();
 		return addNewStudent;
 	} catch (error) {

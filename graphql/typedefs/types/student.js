@@ -13,11 +13,13 @@ const studentType = gql`
 
 	input StudentInput {
 		studentName: String!
-		studentID: String!
+		studentID: ID!
 		email: String!
 		dateOfBirth: String!
 		residentialStatus: String!
 		hallOfResidence: String
+		password:String!
+
 	}
 `;
 

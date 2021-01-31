@@ -37,3 +37,4 @@ server.applyMiddleware({ app, path: "/" });
 app.listen({ port: 8000 }, () => {
 	console.log("Apollo Server on http://localhost:8000/");
 });
+// gradlew downloadApolloSchema --endpoint="http://localhost:8000" --schema="app\src\main\graphql\com\example\androidapollo\schema.json
