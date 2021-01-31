@@ -6,6 +6,7 @@ const { graphqlUploadExpress } = require("graphql-upload");
 const { typeDefs } = require("./graphql/typedefs");
 const { resolvers } = require("./graphql/resolvers");
 const { connect } = require("mongoose");
+const { checkUserAuthentication } = require("./graphql/resolvers/auth/checkAuthentication");
 const models = require("./models/index");
 
 const app = express();
