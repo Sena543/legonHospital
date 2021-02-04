@@ -42,8 +42,8 @@ const server = new ApolloServer({
 	},
 });
 
-server.applyMiddleware({ app, path: "/" });
+server.applyMiddleware({ app, path: "/gql" });
 
 app.listen({ port: 8000 }, () => {
-	console.log("Apollo Server on http://localhost:8000/");
+	console.log("Apollo Server on http://localhost:8000/gql");
 });

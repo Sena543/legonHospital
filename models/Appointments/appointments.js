@@ -15,6 +15,7 @@ const appointmentSchema = new Schema(
 		checkupType: {
 			type: String,
 			required: true,
+			enum: ["Regular Checkup", "Medical Checkup", "Dental Checkup", "Results Collection"],
 		},
 		appointmentStartTime: {
 			type: String,

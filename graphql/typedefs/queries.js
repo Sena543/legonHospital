@@ -9,6 +9,7 @@ const query = gql`
 		students: [Student!]
 		getStudentProfile(studentID: ID!): Student!
 		getDoctorAppointments(doctorID: ID): [Appointment]
+		getAppointmentHistory(studentID: ID!): [Appointment]
 	}
 	type Mutation {
 		login(studentID: ID!, password: String!): Token
