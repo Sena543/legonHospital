@@ -58,7 +58,6 @@ const bookAppointment = async (_, { input }, { models }) => {
 
 const getAppointmentHistory = async (_, { studentID }, { models }) => {
 	const findStudent = await models.studentModel.findOne({ studentID });
-	console.log(findStudent);
 	return await models.appointmentModel
 		.find({ studentID: findStudent._id })
 		.populate("doctorID")

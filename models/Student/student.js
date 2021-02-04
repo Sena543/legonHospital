@@ -28,6 +28,15 @@ const studentSchema = new Schema({
 		type: String,
 		default: "Not Applicable",
 	},
+	gender: {
+		type: String,
+		//required:true
+		enum: ["Male", "Female", "Rather Not Say "],
+	},
+	yearAdmitted: {
+		type: String,
+		// required:true
+	},
 	appointmentList: [
 		{
 			type: Schema.Types.ObjectId,

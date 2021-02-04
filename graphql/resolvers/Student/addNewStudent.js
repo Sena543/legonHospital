@@ -1,6 +1,16 @@
 const addNewStudent = async (_, { input }, { models }) => {
 	const Student = models.studentModel;
-	const { studentID, studentName, hallOfResidence, email, residentialStatus, dateOfBirth } = input;
+	const {
+		studentID,
+		studentName,
+		hallOfResidence,
+		email,
+		residentialStatus,
+		dateOfBirth,
+		gender,
+		yearAddmitted,
+		password,
+	} = input;
 	try {
 		const findStudent = await Student.findOne({ studentID });
 		if (findStudent) {
@@ -12,9 +22,13 @@ const addNewStudent = async (_, { input }, { models }) => {
 			studentName,
 			hallOfResidence,
 			email,
-            residentialStatus,
-            
+			residentialStatus,
+			yearAddmitted,
+			gender,
 		});
+		const login = await models.loginModel(studentID, password);
+		await login.save();
+
 		await addNewStudent.save();
 		return addNewStudent;
 	} catch (error) {
