@@ -18,6 +18,9 @@ const studentSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	roomNumber: {
+		type: String,
+	},
 	residentialStatus: {
 		type: String,
 		default: null,
@@ -36,6 +39,10 @@ const studentSchema = new Schema({
 	yearAdmitted: {
 		type: String,
 		// required:true
+	},
+	studentType: {
+		type: String,
+		required: true,
 	},
 	appointmentList: [
 		{

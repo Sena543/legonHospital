@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { ApolloServer } = require("apollo-server-express");
@@ -11,8 +12,9 @@ const models = require("./models/index");
 
 const app = express();
 
-const db_url =
-	"mongodb+srv://senanu:senanu@legonhospital.tjin0.mongodb.net/legonHospital?retryWrites=true&w=majority";
+const db_url = process.env.DB_URL;
+// "mongodb+srv://senanu:senanu@legonhospital.tjin0.mongodb.net/legonHospital?retryWrites=true&w=majority";
+
 connect(db_url, {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
@@ -44,6 +46,6 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app, path: "/gql" });
 
-app.listen({ port: 8000 }, () => {
+app.listen({ port: process.env.PORT || 9000 }, () => {
 	console.log("Apollo Server on http://localhost:8000/gql");
 });

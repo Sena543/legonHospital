@@ -18,7 +18,6 @@ const query = gql`
 		bookAppointment(input: AppointmentInput): Appointment
 		addNewDoctor(input: DoctorInput): Doctor
 		notifications: String!
-		# notifications: Notifications!
 	}
 `;
 

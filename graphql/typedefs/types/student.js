@@ -8,6 +8,11 @@ const studentType = gql`
 		dateOfBirth: String!
 		residentialStatus: String!
 		hallOfResidence: String
+		gender: String!
+		roomNumber: String
+		yearAdmitted: String
+		studentType: String!
+		hometown: String
 		appointmentList: [Appointment]
 	}
 
@@ -16,6 +21,11 @@ const studentType = gql`
 		studentID: String!
 		email: String!
 		dateOfBirth: String!
+		gender: String!
+		roomNumber: String
+		yearAdmitted: String
+		studentType: String!
+		hometown: String
 		residentialStatus: String!
 		hallOfResidence: String
 	}
