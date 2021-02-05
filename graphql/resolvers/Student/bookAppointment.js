@@ -65,6 +65,7 @@ const getAppointmentHistory = async (_, { studentID }, { models }) => {
 		.exec();
 };
 
+
 module.exports = { bookAppointment, getAppointmentHistory };
 // new Date(1611861544465).toLocaleString()
 //converts milliseconds to proper time and date

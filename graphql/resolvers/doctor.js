@@ -1,9 +1,10 @@
 const { addNewDoctor } = require("./Doctors/addNewDoctor");
-const { getDoctorAppointments } = require("./Doctors/getDoctorAppointments");
+const { getDoctorAppointments, getAvailableDoctors } = require("./Doctors/getDoctorAppointments");
 
 const doctorResolvers = {
 	Query: {
 		getDoctorAppointments,
+		getAvailableDoctors
 	},
 	Mutation: {
 		addNewDoctor,
