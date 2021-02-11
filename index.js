@@ -44,8 +44,11 @@ const server = new ApolloServer({
 	},
 });
 
-server.applyMiddleware({ app, path: "/gql" });
-
-app.listen({ port: process.env.PORT || 9000 }, () => {
-	console.log("Apollo Server on http://localhost:8000/gql");
+server.applyMiddleware({ app, path: "/" });
+const PORT = process.env.PORT || 8000;
+const host = "0.0.0.0";
+app.listen(PORT, host, () => {
+	console.log(`Apollo Server on http://localhost:${PORT}/`);
 });
+
+// https://immense-savannah-88207.herokuapp.com/ | https://git.heroku.com/immense-savannah-88207.git
