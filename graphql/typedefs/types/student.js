@@ -18,7 +18,7 @@ const studentType = gql`
 
 	input StudentInput {
 		studentName: String!
-		studentID: String!
+		studentID: ID!
 		email: String!
 		dateOfBirth: String!
 		gender: String!
@@ -28,6 +28,8 @@ const studentType = gql`
 		hometown: String
 		residentialStatus: String!
 		hallOfResidence: String
+		password:String!
+
 	}
 `;
 

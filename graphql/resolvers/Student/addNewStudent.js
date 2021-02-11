@@ -26,9 +26,15 @@ const addNewStudent = async (_, { input }, { models }) => {
 			yearAddmitted,
 			gender,
 		});
-		const login = await models.loginModel(studentID, password);
-		await login.save();
+		// <<<<<<< HEAD
+		// 		const login = await models.loginModel(studentID, password);
+		// 		await login.save();
 
+		// =======
+		const _login = new Login({ staffID, password });
+		await _login.save();
+
+		// >>>>>>> d210a022bc184876fce497c451eb445738a8f9ea
 		await addNewStudent.save();
 		return addNewStudent;
 	} catch (error) {
