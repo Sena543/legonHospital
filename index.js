@@ -45,8 +45,8 @@ const server = new ApolloServer({
 });
 
 server.applyMiddleware({ app, path: "/" });
-const host = "0.0.0.0";
-const PORT = process.env.PORT || host;
+// const host = "0.0.0.0";
+const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
 	console.log(`Apollo Server on http://localhost:${PORT}/`);
 });

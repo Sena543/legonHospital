@@ -40,10 +40,11 @@ const studentSchema = new Schema({
 		type: String,
 		// required:true
 	},
-	studentType: {
-		type: String,
-		required: true,
-	},
+	// studentType: {
+	// 	type: String,
+	// 	required: true,
+	// 	default: "Undergraduate",
+	// },
 	appointmentList: [
 		{
 			type: Schema.Types.ObjectId,
