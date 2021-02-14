@@ -36,7 +36,7 @@ const addNewStudent = async (_, { input }, { models }) => {
 			phoneNumber,
 		});
 
-		const _login = new Login({ staffID, password });
+		const _login = new Login({ studentID, password });
 		await _login.save();
 
 		await addNewStudent.save();
