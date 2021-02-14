@@ -47,7 +47,7 @@ const studentSchema = new Schema({
 	studentType: {
 		type: String,
 		required: true,
-		default: "Bachelors",
+		// default: "Bachelors",
 		enum: ["Bachelors", "Masters", "Phd"],
 	},
 	appointmentList: [
