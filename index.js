@@ -35,10 +35,10 @@ const server = new ApolloServer({
 	// models,
 	// },
 	context: async ({ req }) => {
-		// const user = checkUserAuthentication(req);
+		const user = checkUserAuthentication(req);
 		return {
 			models,
-			// user,
+			user,
 			secret: process.env.SECRET,
 		};
 	},

@@ -22,7 +22,8 @@ const loginUser = async (_, { staffID, password }, { models, secret }) => {
 
 	const match = await bcrypt.compare(password, _login.password);
 	if (!match) return new AuthenticationError("Incorrect password!");
-	return { token: createToken(_login.staffID, secret, 60 * 60) };
+	return { token: createToken(_login.staffID, secret, 24 * 60 * 60) };
+        // marginRight:50,
 };
 
 module.exports = { loginUser };

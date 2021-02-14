@@ -1,7 +1,7 @@
-const { execute } = require("graphql");
-const { model } = require("mongoose");
+const { combineResolvers } = require("graphql-resolvers");
+const isAuthenticated = require("../auth/authorizations");
 
-const bookAppointment = async (_, { input }, { models }) => {
+const bookAppointment = combineResolvers(isAuthenticated, async (_, { input }, { models }) => {
 	const {
 		appointmentStartTime,
 		arrivalConfirmation,
@@ -54,17 +54,16 @@ const bookAppointment = async (_, { input }, { models }) => {
 		console.error(error);
 	}
 	return input;
-};
+});
 
-const getAppointmentHistory = async (_, { studentID }, { models }) => {
+const getAppointmentHistory = combineResolvers(isAuthenticated, async (_, { studentID }, { models }) => {
 	const findStudent = await models.studentModel.findOne({ studentID });
 	return await models.appointmentModel
 		.find({ studentID: findStudent._id })
 		.populate("doctorID")
 		.populate("studentID")
 		.exec();
-};
-
+});
 
 module.exports = { bookAppointment, getAppointmentHistory };
 // new Date(1611861544465).toLocaleString()
