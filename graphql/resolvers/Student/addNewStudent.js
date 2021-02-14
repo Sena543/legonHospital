@@ -1,5 +1,6 @@
 const addNewStudent = async (_, { input }, { models }) => {
 	const Student = models.studentModel;
+	const Login = models.loginModel;
 	const {
 		email,
 		gender,
