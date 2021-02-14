@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const loginSchema = new Schema({
-	staffID: {
+	studentID: {
 		type: String,
 		required: true,
 	},
@@ -13,12 +13,12 @@ const loginSchema = new Schema({
 });
 
 loginSchema.pre("save", function (next) {
-	let staff = this;
+	let student = this;
 	bcrypt.genSalt(10, function (err, salt) {
 		if (err) return next(err);
-		bcrypt.hash(staff.password, salt, function (err, hash) {
+		bcrypt.hash(student.password, salt, function (err, hash) {
 			if (err) return next(err);
-			staff.password = hash;
+			student.password = hash;
 			next();
 		});
 	});
