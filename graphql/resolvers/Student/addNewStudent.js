@@ -10,7 +10,10 @@ const addNewStudent = async (_, { input }, { models }) => {
 		gender,
 		yearAddmitted,
 		password,
+		phoneNumber,
+		roomNumber,
 	} = input;
+
 	try {
 		console.log(input);
 		// const findStudent = await Student.findOne({ studentID });
@@ -23,6 +26,8 @@ const addNewStudent = async (_, { input }, { models }) => {
 		// 	studentName,
 		// 	hallOfResidence,
 		// 	email,
+		// phoneNumber,
+		// roomNumber
 		// 	residentialStatus,
 		// 	yearAddmitted,
 		// 	gender,

@@ -12,7 +12,7 @@ const studentType = gql`
 		roomNumber: String
 		yearAdmitted: String
 		studentType: String!
-		# hometown: String
+		phoneNumber: String
 		appointmentList: [Appointment]
 	}
 
@@ -25,11 +25,10 @@ const studentType = gql`
 		roomNumber: String
 		yearAdmitted: String
 		studentType: String!
-		# hometown: String
 		residentialStatus: String!
 		hallOfResidence: String
-		password:String!
-
+		password: String!
+		phoneNumber: String
 	}
 `;
 
