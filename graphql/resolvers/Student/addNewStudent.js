@@ -5,6 +5,7 @@ const addNewStudent = async (_, { input }, { models }) => {
 		email,
 		gender,
 		hallOfResidence,
+		dateOfBirth,
 		residentialStatus,
 		roomNumber,
 		studentID,
@@ -24,6 +25,7 @@ const addNewStudent = async (_, { input }, { models }) => {
 		const addNewStudent = await new Student({
 			email,
 			gender,
+			dateOfBirth,
 			hallOfResidence,
 			residentialStatus,
 			roomNumber,
@@ -31,7 +33,7 @@ const addNewStudent = async (_, { input }, { models }) => {
 			studentName,
 			studentType,
 			yearAdmitted,
-			password,
+			// password,
 			confirmPass,
 			phoneNumber,
 		});
