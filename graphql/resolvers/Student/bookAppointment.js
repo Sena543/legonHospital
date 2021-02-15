@@ -1,5 +1,5 @@
 const { combineResolvers } = require("graphql-resolvers");
-const isAuthenticated = require("../auth/authorizations");
+const { isAuthenticated } = require("../auth/authorizations");
 
 const bookAppointment = combineResolvers(isAuthenticated, async (_, { input }, { models }) => {
 	const {
@@ -57,13 +57,31 @@ const bookAppointment = combineResolvers(isAuthenticated, async (_, { input }, {
 });
 
 const getAppointmentHistory = combineResolvers(isAuthenticated, async (_, { studentID }, { models }) => {
-	const findStudent = await models.studentModel.findOne({ studentID });
-	return await models.appointmentModel
-		.find({ studentID: findStudent._id })
-		.populate("doctorID")
-		.populate("studentID")
-		.exec();
+	try {
+		const findStudent = await models.studentModel.findOne({ studentID });
+		return await models.appointmentModel
+			.find({ studentID: findStudent._id })
+			.populate("doctorID")
+			.populate("studentID")
+			.exec();
+	} catch (error) {
+		console.error(error);
+	}
 });
+
+// const getAppointmentHistory = async (_, { studentID }, { models }) => {
+// 	try {
+// 		const findStudent = await models.studentModel.findOne({ studentID });
+// 		console.log(findStudent);
+// 		return await models.appointmentModel
+// 			.find({ studentID: findStudent._id })
+// 			.populate("doctorID")
+// 			.populate("studentID")
+// 			.exec();
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// };
 
 module.exports = { bookAppointment, getAppointmentHistory };
 // new Date(1611861544465).toLocaleString()
