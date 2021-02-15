@@ -25,7 +25,7 @@ const loginUser = async (_, { studentID, password }, { models, secret }) => {
 
 		const match = await bcrypt.compare(password, _login.password);
 		if (!match) return new AuthenticationError("Incorrect password!");
-		return { token: createToken(_login.studentID, secret, 24 * 60 * 60) };
+		return { token: createToken(_login.studentID, secret, "30d") };
 	} catch (error) {
 		console.trace(error);
 	}
