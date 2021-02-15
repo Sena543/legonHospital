@@ -13,7 +13,7 @@ const query = gql`
 		getAvailableDoctors(timeSelected: String): [Doctor]
 	}
 	type Mutation {
-		login(studentID: ID!, password: String!): Token
+		loginUser(studentID: ID!, password: String!): Token
 		addNewStudent(input: StudentInput): Student
 		bookAppointment(input: AppointmentInput): Appointment
 		addNewDoctor(input: DoctorInput): Doctor

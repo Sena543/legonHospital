@@ -13,7 +13,7 @@ const addNewStudent = async (_, { input }, { models }) => {
 		studentType,
 		yearAdmitted,
 		password,
-		confirmPass,
+		// confirmPass,
 		phoneNumber,
 	} = input;
 
