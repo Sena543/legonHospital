@@ -69,20 +69,6 @@ const getAppointmentHistory = combineResolvers(isAuthenticated, async (_, { stud
 	}
 });
 
-// const getAppointmentHistory = async (_, { studentID }, { models }) => {
-// 	try {
-// 		const findStudent = await models.studentModel.findOne({ studentID });
-// 		console.log(findStudent);
-// 		return await models.appointmentModel
-// 			.find({ studentID: findStudent._id })
-// 			.populate("doctorID")
-// 			.populate("studentID")
-// 			.exec();
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// };
-
 module.exports = { bookAppointment, getAppointmentHistory };
 // new Date(1611861544465).toLocaleString()
 //converts milliseconds to proper time and date
