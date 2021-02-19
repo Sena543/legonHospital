@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
+const { AuthenticationError, UserInputError } = require("apollo-server-express");
+
 function createToken(user, secret, expirationTime) {
 	return jwt.sign({ user }, secret, { expiresIn: expirationTime });
 }
