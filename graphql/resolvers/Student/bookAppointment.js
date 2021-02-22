@@ -7,7 +7,7 @@ const bookAppointment = combineResolvers(isAuthenticated, async (_, { input }, {
 		arrivalConfirmation,
 		checkupType,
 		doctorID,
-		endTime,
+		// endTime,
 		studentID,
 		appointmentDate,
 	} = input;
@@ -25,7 +25,7 @@ const bookAppointment = combineResolvers(isAuthenticated, async (_, { input }, {
 		const checkAppointmentExistence = await Appointment.findOne({
 			doctorID: findDoctor._id,
 			appointmentStartTime,
-			endTime,
+			// endTime,
 		});
 
 		if (checkAppointmentExistence) {
@@ -36,7 +36,7 @@ const bookAppointment = combineResolvers(isAuthenticated, async (_, { input }, {
 			arrivalConfirmation,
 			checkupType,
 			doctorID: findDoctor._id,
-			endTime,
+			endTime: `${Number(appointmentStartTime[0]) + 1}:00`,
 			studentID: findStudent._id,
 			appointmentDate,
 		});

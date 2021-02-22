@@ -16,7 +16,7 @@ const AppointmentType = gql`
 		doctorID: ID!
 		checkupType: String!
 		appointmentStartTime: String!
-		endTime: String!
+		# endTime: String!
 		arrivalConfirmation: Boolean
 		appointmentDate: String!
 	}
