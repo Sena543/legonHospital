@@ -27,7 +27,7 @@ const studentSchema = new Schema({
 		required: true,
 		enum: ["Resident", "Non Resident"],
 	},
-	hallofResidence: {
+	hallOfResidence: {
 		type: String,
 		default: "Not Applicable",
 	},
