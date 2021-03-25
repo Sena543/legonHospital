@@ -3,12 +3,15 @@ const { bookAppointment, getAppointmentHistory } = require("./Student/bookAppoin
 const { getAllStudents } = require("./Student/allStudents");
 const { getStudentProfile } = require("./Student/getStudentProfile");
 const { notifications } = require("./Student/notifications");
+const { findStudentID } = require("./Student/findStudent");
+const { confirmArrival } = require("./Student/confirmArrival");
 
 const studentResolvers = {
 	Query: {
 		students: getAllStudents,
 		getStudentProfile,
 		getAppointmentHistory,
+		findStudentID,
 	},
 	Student: {
 		appointmentList: async (parent, _, { models }) => {
@@ -19,6 +22,7 @@ const studentResolvers = {
 		addNewStudent,
 		bookAppointment,
 		notifications,
+		confirmArrival,
 	},
 };
 

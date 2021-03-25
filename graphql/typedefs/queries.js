@@ -11,6 +11,7 @@ const query = gql`
 		getDoctorAppointments(doctorID: ID): [Appointment]
 		getAppointmentHistory(studentID: ID!): [Appointment]
 		getAvailableDoctors(timeSelected: String): [Doctor]
+		findStudentID(studentID: String!): Student
 	}
 	type Mutation {
 		loginUser(studentID: ID!, password: String!): Token
@@ -18,6 +19,7 @@ const query = gql`
 		bookAppointment(input: AppointmentInput): Appointment
 		addNewDoctor(input: DoctorInput): Doctor
 		notifications: String!
+		confirmArrival(studentID: String!): String
 	}
 `;
 
