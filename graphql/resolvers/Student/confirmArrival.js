@@ -1,7 +1,6 @@
 const confirmArrival = async (_, { studentID }, { models }) => {
 	const Appointment = models.appointmentModel;
 	const Student = models.studentModel;
-	console.log(studentID);
 	const findStudent = await Student.findOne({ studentID });
 	const confirm = await Appointment.findOneAndUpdate(
 		{ studentID: findStudent._id },
