@@ -1,6 +1,12 @@
+/**
+ * saved doctor ID as student ID inn the login schena
+ * this was done to mame completing the doctors side easier and faster
+ * would be properly updated down the line.
+ */
 const addNewDoctor = async (_, { input }, { models }) => {
 	const Doctor = models.doctorModel;
-	const { doctorID, doctorName, email, officeNumber, timesAvailable } = input;
+	const Login = models.loginModel;
+	const { doctorID, doctorName, email, officeNumber, timesAvailable, password } = input;
 	try {
 		const findDoctor = await Doctor.findOne({ doctorID });
 		if (findDoctor) {
@@ -10,9 +16,13 @@ const addNewDoctor = async (_, { input }, { models }) => {
 			doctorID,
 			doctorName,
 			email,
-			officeNumber,
 			timesAvailable,
+			officeNumber,
 		});
+
+		const _login = new Login({ studentID: doctorID, password });
+		await _login.save();
+
 		await addNewDoctor.save();
 		return addNewDoctor;
 		// return input;

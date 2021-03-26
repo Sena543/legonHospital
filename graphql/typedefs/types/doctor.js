@@ -14,6 +14,7 @@ const DoctorType = gql`
 		doctorName: String!
 		email: String!
 		timesAvailable: [String!]!
+		password: String!
 		officeNumber: String!
 	}
 `;

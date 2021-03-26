@@ -40,10 +40,9 @@ const addNewStudent = async (_, { input }, { models }) => {
 
 		const _login = new Login({ studentID, password });
 		await _login.save();
+
 		await addNewStudent.save();
-		console.log(addNewStudent);
 		return addNewStudent;
-		// return input;
 	} catch (error) {
 		console.error(error);
 	}

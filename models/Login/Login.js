@@ -1,6 +1,10 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
+/**
+ * studentID should be changed to user ID
+ */
+
 const loginSchema = new Schema({
 	studentID: {
 		type: String,
