@@ -35,4 +35,16 @@ const getAvailableDoctors = async (_, { timeSelected }, { models }) => {
 	return getDoctors;
 };
 
-module.exports = { getDoctorAppointments, getAvailableDoctors };
+const getWorkingHours = async (_, { doctorID }, { models }) => {
+	const Doctor = models.doctorModel;
+	return await Doctor.findOne({ doctorID });
+};
+
+const updateWorkingHours = async (_, { doctorID, timesAvailable }, { models }) => {
+	const Doctor = models.doctorModel;
+	const _update = await Doctor.findOneAndUpdate(doctorID, timesAvailable);
+	console.log(_update);
+	return "Update Completed";
+};
+
+module.exports = { getDoctorAppointments, getAvailableDoctors, getWorkingHours, updateWorkingHours };

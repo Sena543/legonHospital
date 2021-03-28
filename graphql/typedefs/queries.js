@@ -12,6 +12,7 @@ const query = gql`
 		getAppointmentHistory(studentID: ID!): [Appointment]
 		getAvailableDoctors(timeSelected: String): [Doctor]
 		findStudentID(studentID: String!): Student
+		getWorkingHours(doctorID: ID!): Doctor
 	}
 	type Mutation {
 		loginUser(studentID: ID!, password: String!): Token
@@ -20,6 +21,7 @@ const query = gql`
 		addNewDoctor(input: DoctorInput): Doctor
 		notifications: String!
 		confirmArrival(studentID: String!): String
+		updateWorkingHours(doctorID: ID, timesAvailable: [String]): String!
 	}
 `;
 
