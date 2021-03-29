@@ -18,38 +18,41 @@ const studentSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	roomNumber: {
+	// roomNumber: {
+	// 	type: String,
+	// },
+	department: {
 		type: String,
 	},
-	residentialStatus: {
-		type: String,
-		default: null,
-		required: true,
-		enum: ["Resident", "Non Resident"],
-	},
-	hallOfResidence: {
-		type: String,
-		default: "Not Applicable",
-	},
+	// residentialStatus: {
+	// 	type: String,
+	// 	default: null,
+	// 	required: true,
+	// 	enum: ["Resident", "Non Resident"],
+	// },
+	// hallOfResidence: {
+	// 	type: String,
+	// 	default: "Not Applicable",
+	// },
 	gender: {
 		type: String,
 		//required:true
 		enum: ["Male", "Female", "Rather Not Say "],
 	},
-	yearAdmitted: {
-		type: String,
-		// required:true
-	},
+	// yearAdmitted: {
+	// 	type: String,
+	// 	// required:true
+	// },
 	phoneNumber: {
 		type: String,
 		default: "N/A",
 	},
-	studentType: {
-		type: String,
-		required: true,
-		// default: "Bachelors",
-		enum: ["Bachelors", "Masters", "Phd"],
-	},
+	// studentType: {
+	// 	type: String,
+	// 	required: true,
+	// 	// default: "Bachelors",
+	// 	enum: ["Bachelors", "Masters", "Phd"],
+	// },
 	appointmentList: [
 		{
 			type: Schema.Types.ObjectId,

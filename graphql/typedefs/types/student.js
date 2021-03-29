@@ -6,12 +6,13 @@ const studentType = gql`
 		studentID: ID!
 		email: String!
 		dateOfBirth: String!
-		residentialStatus: String!
-		hallOfResidence: String
+		# residentialStatus: String!
+		# hallOfResidence: String
 		gender: String!
-		roomNumber: String
-		yearAdmitted: String
-		studentType: String!
+		# roomNumber: String
+		# yearAdmitted: String
+		# studentType: String!
+		department: String!
 		phoneNumber: String
 		appointmentList: [Appointment]
 	}
@@ -22,11 +23,12 @@ const studentType = gql`
 		email: String!
 		dateOfBirth: String!
 		gender: String!
-		roomNumber: String
-		yearAdmitted: String
-		studentType: String!
-		residentialStatus: String!
-		hallOfResidence: String
+		department: String!
+		# roomNumber: String
+		# yearAdmitted: String
+		# studentType: String!
+		# residentialStatus: String!
+		# hallOfResidence: String
 		password: String!
 		phoneNumber: String
 	}
