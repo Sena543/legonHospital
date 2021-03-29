@@ -21,7 +21,7 @@ const query = gql`
 		addNewDoctor(input: DoctorInput): Doctor
 		notifications: String!
 		confirmArrival(studentID: String!): String
-		updateWorkingHours(doctorID: ID, timesAvailable: [String]): String!
+		updateWorkingHours(doctorID: ID, timesAvailable: [String]): Doctor
 	}
 `;
 
