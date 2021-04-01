@@ -15,6 +15,7 @@ const getDoctorAppointments = async (_, { doctorID }, { models }) => {
 const getAvailableDoctors = async (_, { timeSelected }, { models }) => {
 	const Appointment = models.doctorModel;
 	const timesProc = `${timeSelected}-${Number(timeSelected[0]) + 1}:00`;
+	// console.log(timesProc);
 	const getDoctors = await Appointment.find({ timesAvailable: timesProc });
 
 	//check if doc hass appintment at selected time and if not to array

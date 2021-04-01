@@ -21,10 +21,12 @@ const bookAppointment = combineResolvers(isAuthenticated, async (_, { input }, {
 			Doctor.findOne({ doctorID }),
 		]);
 
+		// console.log(appointmentDate);
 		//check if doctor has an appointment at the selected time
 		const checkAppointmentExistence = await Appointment.findOne({
 			doctorID: findDoctor._id,
 			appointmentStartTime,
+			appointmentDate,
 			// endTime,
 		});
 
