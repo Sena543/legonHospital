@@ -8,6 +8,7 @@ DB_URL - url to mongo db database
 SECRET - random strings used for hashing passwords
 
 generate a secure one in node using the code in secret.js file
+run with the command node secret.js
 
 To run in production use npm start
 To run in dev mode use npm run dev
