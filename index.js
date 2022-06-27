@@ -13,7 +13,6 @@ const models = require("./models/index");
 const app = express();
 
 const db_url = process.env.DB_URL;
-// "mongodb+srv://senanu:senanu@legonhospital.tjin0.mongodb.net/legonHospital?retryWrites=true&w=majority";
 
 connect(db_url, {
 	useUnifiedTopology: true,
@@ -31,9 +30,6 @@ const server = new ApolloServer({
 	resolvers,
 	typeDefs,
 	uploads: false,
-	// context: {
-	// models,
-	// },
 	context: async ({ req }) => {
 		const user = checkUserAuthentication(req);
 		return {
@@ -45,9 +41,7 @@ const server = new ApolloServer({
 });
 
 server.applyMiddleware({ app, path: "/" });
-// const host = "0.0.0.0";
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
 	console.log(`Apollo Server on http://localhost:${PORT}/`);
 });
-// https://immense-savannah-88207.herokuapp.com/ | https://git.heroku.com/immense-savannah-88207.git
