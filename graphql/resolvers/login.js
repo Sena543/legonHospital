@@ -29,4 +29,3 @@ const LoginResolver = {
 };
 
 module.exports = { LoginResolver };
-// module.exports = { loginUser };
